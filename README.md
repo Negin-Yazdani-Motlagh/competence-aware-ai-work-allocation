@@ -65,3 +65,13 @@ H (human-only), L (delegation), A (co-production), V (structured verification).
 ![M2 policy map](M2/figures/m2_policy_map.png)
 
 Baseline Dynamic uses mostly H, some A, almost no V, and never L. Myopic uses L heavily. V is rare and concentrated at the beginning and end of the horizon.
+
+---
+
+## Check A — Bastani et al. field experiment
+
+Empirical constraint check, not an attractor calibration. See [`CheckA/`](CheckA/).
+
+Later unassisted exam: GPT Tutor vs GPT Base = **0.050** (SE 0.023, p = 0.032). That supports the qualitative ordering \(m_A^c > m_L^c\). GPT Tutor vs Control is indistinguishable from zero, so it does not support \(m_A^c > m_H^c\).
+
+![Check A contrasts](CheckA/checkA_coefficient_plot.png)

@@ -1,0 +1,278 @@
+Loading required package: zoo
+
+Attaching package: ‘zoo’
+
+The following objects are masked from ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+
+Please cite as: 
+
+ Hlavac, Marek (2022). stargazer: Well-Formatted Regression and Summary Statistics Tables.
+ R package version 5.2.3. https://CRAN.R-project.org/package=stargazer 
+
+Rows: 3255 Columns: 31
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (9): Class, Grader, Survey Q1, Survey Q2, Survey Q3, Survey Q4, Survey ...
+dbl (22): Student ID, Year, Session, Part2Tot, Part3Tot, gpa_prev, GPTBase, ...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Wed, Sep 09, 2026 - 13:13:07
+% Requires LaTeX packages: dcolumn 
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{1}{c}{Part2Tot} & \multicolumn{1}{c}{Part3Tot} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)}\\ 
+\hline \\[-1.8ex] 
+ GPTBase & 0.137^{***} & -0.054^{**} \\ 
+  & (0.031) & (0.022) \\ 
+  & & \\ 
+ GPTTutor & 0.361^{***} & -0.004 \\ 
+  & (0.032) & (0.013) \\ 
+  & & \\ 
+ gpa\_prev & 0.802^{***} & 1.334^{***} \\ 
+  & (0.076) & (0.069) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & \multicolumn{1}{c}{2,848} & \multicolumn{1}{c}{2,848} \\ 
+R$^{2}$ & \multicolumn{1}{c}{0.389} & \multicolumn{1}{c}{0.386} \\ 
+Adjusted R$^{2}$ & \multicolumn{1}{c}{0.382} & \multicolumn{1}{c}{0.379} \\ 
+Residual Std. Error (df = 2813) & \multicolumn{1}{c}{0.259} & \multicolumn{1}{c}{0.211} \\ 
+F Statistic (df = 34; 2813) & \multicolumn{1}{c}{52.770$^{***}$} & \multicolumn{1}{c}{52.020$^{***}$} \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Wed, Sep 09, 2026 - 13:13:07
+% Requires LaTeX packages: dcolumn 
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{1}{c}{Part2Tot} & \multicolumn{1}{c}{Part3Tot} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)}\\ 
+\hline \\[-1.8ex] 
+ GPTBase & 0.137^{***} & -0.054^{**} \\ 
+  & (0.031) & (0.022) \\ 
+  & & \\ 
+ GPTTutor & 0.362^{***} & -0.004 \\ 
+  & (0.032) & (0.013) \\ 
+  & & \\ 
+ gpa\_prev & 0.808^{***} & 1.341^{***} \\ 
+  & (0.077) & (0.069) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & \multicolumn{1}{c}{2,805} & \multicolumn{1}{c}{2,805} \\ 
+R$^{2}$ & \multicolumn{1}{c}{0.387} & \multicolumn{1}{c}{0.385} \\ 
+Adjusted R$^{2}$ & \multicolumn{1}{c}{0.380} & \multicolumn{1}{c}{0.377} \\ 
+Residual Std. Error (df = 2770) & \multicolumn{1}{c}{0.260} & \multicolumn{1}{c}{0.211} \\ 
+F Statistic (df = 34; 2770) & \multicolumn{1}{c}{51.477$^{***}$} & \multicolumn{1}{c}{50.903$^{***}$} \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Wed, Sep 09, 2026 - 13:13:07
+% Requires LaTeX packages: dcolumn 
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{1}{c}{Part2Tot} & \multicolumn{1}{c}{Part3Tot} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)}\\ 
+\hline \\[-1.8ex] 
+ GPTBase & 0.146^{***} & -0.041^{**} \\ 
+  & (0.029) & (0.021) \\ 
+  & & \\ 
+ GPTTutor & 0.364^{***} & -0.001 \\ 
+  & (0.030) & (0.012) \\ 
+  & & \\ 
+ gpa\_prev & 0.739^{***} & 1.210^{***} \\ 
+  & (0.076) & (0.072) \\ 
+  & & \\ 
+ education\_parent & -0.004 & 0.001 \\ 
+  & (0.003) & (0.003) \\ 
+  & & \\ 
+ n\_household\_members & -0.006 & 0.004 \\ 
+  & (0.007) & (0.005) \\ 
+  & & \\ 
+ n\_household\_children & -0.001 & -0.004 \\ 
+  & (0.004) & (0.003) \\ 
+  & & \\ 
+ class\_enjoyment & -0.010^{**} & -0.001 \\ 
+  & (0.005) & (0.005) \\ 
+  & & \\ 
+ class\_participation\_likelihood & 0.018^{***} & 0.011^{*} \\ 
+  & (0.007) & (0.006) \\ 
+  & & \\ 
+ n\_weekday\_study\_hours & -0.002 & -0.003 \\ 
+  & (0.003) & (0.003) \\ 
+  & & \\ 
+ n\_weekend\_study\_hours & -0.002 & -0.002 \\ 
+  & (0.002) & (0.002) \\ 
+  & & \\ 
+ math\_hw\_completion & 0.028^{***} & 0.033^{***} \\ 
+  & (0.007) & (0.006) \\ 
+  & & \\ 
+ hw\_help & -0.006 & -0.006 \\ 
+  & (0.017) & (0.011) \\ 
+  & & \\ 
+ private\_tutorship & 0.009 & -0.005 \\ 
+  & (0.013) & (0.008) \\ 
+  & & \\ 
+ visit\_training\_center & 0.030^{*} & 0.041^{***} \\ 
+  & (0.017) & (0.013) \\ 
+  & & \\ 
+ female & -0.007 & 0.009 \\ 
+  & (0.016) & (0.012) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & \multicolumn{1}{c}{2,848} & \multicolumn{1}{c}{2,848} \\ 
+R$^{2}$ & \multicolumn{1}{c}{0.401} & \multicolumn{1}{c}{0.404} \\ 
+Adjusted R$^{2}$ & \multicolumn{1}{c}{0.391} & \multicolumn{1}{c}{0.394} \\ 
+Residual Std. Error (df = 2801) & \multicolumn{1}{c}{0.257} & \multicolumn{1}{c}{0.208} \\ 
+F Statistic (df = 46; 2801) & \multicolumn{1}{c}{40.757$^{***}$} & \multicolumn{1}{c}{41.295$^{***}$} \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+Rows: 3255 Columns: 31
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (9): Class, Grader, Survey Q1, Survey Q2, Survey Q3, Survey Q4, Survey ...
+dbl (22): Student ID, Year, Session, Part2Tot, Part3Tot, gpa_prev, GPTBase, ...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Wed, Sep 09, 2026 - 13:13:07
+% Requires LaTeX packages: dcolumn 
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{1}{c}{Part2Tot} & \multicolumn{1}{c}{Part3Tot} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)}\\ 
+\hline \\[-1.8ex] 
+ GPTBase & 0.101^{***} & -0.064^{**} \\ 
+  & (0.032) & (0.026) \\ 
+  & & \\ 
+ GPTTutor & 0.359^{***} & 0.001 \\ 
+  & (0.032) & (0.018) \\ 
+  & & \\ 
+ gpa\_prev & 0.947^{***} & 1.461^{***} \\ 
+  & (0.078) & (0.072) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & \multicolumn{1}{c}{3,200} & \multicolumn{1}{c}{3,200} \\ 
+R$^{2}$ & \multicolumn{1}{c}{0.380} & \multicolumn{1}{c}{0.433} \\ 
+Adjusted R$^{2}$ & \multicolumn{1}{c}{0.373} & \multicolumn{1}{c}{0.427} \\ 
+Residual Std. Error (df = 3163) & \multicolumn{1}{c}{0.260} & \multicolumn{1}{c}{0.215} \\ 
+F Statistic (df = 36; 3163) & \multicolumn{1}{c}{53.907$^{***}$} & \multicolumn{1}{c}{67.158$^{***}$} \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+	Welch Two Sample t-test
+
+data:  df[df$`Treatment arm` == "control", ]$Part2Tot and df[df$`Treatment arm` == "vanilla", ]$Part2Tot
+t = -15.209, df = 1874.6, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.2143404 -0.1653763
+sample estimates:
+mean of x mean of y 
+0.2838290 0.4736874 
+
+
+	Welch Two Sample t-test
+
+data:  df[df$`Treatment arm` == "control", ]$Part2Tot and df[df$`Treatment arm` == "augmented", ]$Part2Tot
+t = -29.214, df = 2006.4, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.4110115 -0.3593000
+sample estimates:
+mean of x mean of y 
+0.2838290 0.6689848 
+
+
+	Welch Two Sample t-test
+
+data:  df[df$`Treatment arm` == "vanilla", ]$Part2Tot and df[df$`Treatment arm` == "augmented", ]$Part2Tot
+t = -14.711, df = 1820.2, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.2213352 -0.1692596
+sample estimates:
+mean of x mean of y 
+0.4736874 0.6689848 
+
+
+	Welch Two Sample t-test
+
+data:  df[df$`Treatment arm` == "control", ]$Part3Tot and df[df$`Treatment arm` == "vanilla", ]$Part3Tot
+t = 2.9613, df = 1900.5, p-value = 0.003102
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.01166122 0.05739802
+sample estimates:
+mean of x mean of y 
+0.3214256 0.2868960 
+
+
+	Welch Two Sample t-test
+
+data:  df[df$`Treatment arm` == "control", ]$Part3Tot and df[df$`Treatment arm` == "augmented", ]$Part3Tot
+t = 0.50619, df = 2037.4, p-value = 0.6128
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.01789430  0.03034549
+sample estimates:
+mean of x mean of y 
+0.3214256 0.3152000 
+
+
+	Welch Two Sample t-test
+
+data:  df[df$`Treatment arm` == "vanilla", ]$Part3Tot and df[df$`Treatment arm` == "augmented", ]$Part3Tot
+t = -2.3517, df = 1819.9, p-value = 0.01879
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.051908507 -0.004699539
+sample estimates:
+mean of x mean of y 
+ 0.286896  0.315200 
+
