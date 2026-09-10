@@ -1,0 +1,265 @@
+{
+  "model": "M2",
+  "note": "First M2 baseline. New parameters (omega, kappa_V, gamma, A/V attractors, m_H^v) are provisional modeling assumptions.",
+  "T": 1000,
+  "n_runs": 100,
+  "seed": 42,
+  "c0": 0.35,
+  "v0": 0.35,
+  "omega": 0.5,
+  "rho": 0.024,
+  "costs": {
+    "H": 0.26,
+    "L": 0.02,
+    "A": 0.055,
+    "V": 0.1
+  },
+  "attractors_c": {
+    "H": 1.0,
+    "L": 0.0,
+    "A": 0.6,
+    "V": 0.25
+  },
+  "attractors_v": {
+    "H": 0.2,
+    "L": 0.0,
+    "A": 0.4,
+    "V": 0.9
+  },
+  "alpha": {
+    "alpha0": -0.5,
+    "alpha_c": 3.9,
+    "alpha_z": 2.0
+  },
+  "gamma": {
+    "gamma0": -0.5,
+    "gamma_v": 3.9,
+    "gamma_z": 2.0
+  },
+  "terminal": {
+    "B": 20.0,
+    "w": 0.5
+  },
+  "dp": {
+    "n_c_grid": 51,
+    "n_v_grid": 51,
+    "task_quadrature": "tensor product linspace(0,1,3)^4 = 81 nodes on (z,r,l,phi)",
+    "interpolation": "bilinear on a uniform 51 x 51 (c,v) grid; E_{z,r,l,phi} is the mean over the 3^4=81 tensor product linspace(0,1,3)^4"
+  },
+  "summary": {
+    "H-only": {
+      "c_T": {
+        "mean": 0.9999999999816879,
+        "sd": 3.3474483693592255e-16,
+        "ci95_low": 0.9999999999816878,
+        "ci95_high": 0.999999999981688,
+        "n": 100
+      },
+      "v_T": {
+        "mean": 0.20000000000422588,
+        "sd": 5.579080615598709e-17,
+        "ci95_low": 0.20000000000422588,
+        "ci95_high": 0.20000000000422588,
+        "n": 100
+      },
+      "cumulative_u": {
+        "mean": 578.7476048924362,
+        "sd": 2.911955107326517,
+        "ci95_low": 578.1768616914003,
+        "ci95_high": 579.3183480934722,
+        "n": 100
+      },
+      "action_share": {
+        "H": 1.0,
+        "L": 0.0,
+        "A": 0.0,
+        "V": 0.0
+      }
+    },
+    "L-only": {
+      "c_T": {
+        "mean": 9.86019970420207e-12,
+        "sd": 1.6237261634083432e-27,
+        "ci95_low": 9.86019970420207e-12,
+        "ci95_high": 9.86019970420207e-12,
+        "n": 100
+      },
+      "v_T": {
+        "mean": 9.86019970420207e-12,
+        "sd": 1.6237261634083432e-27,
+        "ci95_low": 9.86019970420207e-12,
+        "ci95_high": 9.86019970420207e-12,
+        "n": 100
+      },
+      "cumulative_u": {
+        "mean": 231.10857355716726,
+        "sd": 13.788628897278752,
+        "ci95_low": 228.40600229330062,
+        "ci95_high": 233.8111448210339,
+        "n": 100
+      },
+      "action_share": {
+        "H": 0.0,
+        "L": 1.0,
+        "A": 0.0,
+        "V": 0.0
+      }
+    },
+    "A-only": {
+      "c_T": {
+        "mean": 0.5999999999929573,
+        "sd": 1.1158161231197418e-16,
+        "ci95_low": 0.5999999999929573,
+        "ci95_high": 0.5999999999929573,
+        "n": 100
+      },
+      "v_T": {
+        "mean": 0.39999999999859137,
+        "sd": 0.0,
+        "ci95_low": 0.39999999999859137,
+        "ci95_high": 0.39999999999859137,
+        "n": 100
+      },
+      "cumulative_u": {
+        "mean": 328.2569375330618,
+        "sd": 8.02284404357792,
+        "ci95_low": 326.6844601005205,
+        "ci95_high": 329.82941496560306,
+        "n": 100
+      },
+      "action_share": {
+        "H": 0.0,
+        "L": 0.0,
+        "A": 1.0,
+        "V": 0.0
+      }
+    },
+    "V-only": {
+      "c_T": {
+        "mean": 0.25000000000281725,
+        "sd": 0.0,
+        "ci95_low": 0.25000000000281725,
+        "ci95_high": 0.25000000000281725,
+        "n": 100
+      },
+      "v_T": {
+        "mean": 0.8999999999845052,
+        "sd": 1.1158161231197418e-16,
+        "ci95_low": 0.8999999999845052,
+        "ci95_high": 0.8999999999845052,
+        "n": 100
+      },
+      "cumulative_u": {
+        "mean": 277.23297251788443,
+        "sd": 12.114143175418697,
+        "ci95_low": 274.85860045550237,
+        "ci95_high": 279.6073445802665,
+        "n": 100
+      },
+      "action_share": {
+        "H": 0.0,
+        "L": 0.0,
+        "A": 0.0,
+        "V": 1.0
+      }
+    },
+    "Myopic": {
+      "c_T": {
+        "mean": 0.25464480649853355,
+        "sd": 0.08745849996000558,
+        "ci95_low": 0.23750294050637247,
+        "ci95_high": 0.27178667249069466,
+        "n": 100
+      },
+      "v_T": {
+        "mean": 0.15902251995716274,
+        "sd": 0.042647905456029804,
+        "ci95_low": 0.1506635304877809,
+        "ci95_high": 0.1673815094265446,
+        "n": 100
+      },
+      "cumulative_u": {
+        "mean": 303.1746902211691,
+        "sd": 15.354186147385962,
+        "ci95_low": 300.16526973628146,
+        "ci95_high": 306.18411070605674,
+        "n": 100
+      },
+      "action_share": {
+        "H": 0.13373,
+        "L": 0.60291,
+        "A": 0.18932,
+        "V": 0.07404
+      }
+    },
+    "Dynamic": {
+      "c_T": {
+        "mean": 0.8899167915351431,
+        "sd": 0.025872314836791775,
+        "ci95_low": 0.8848458178271319,
+        "ci95_high": 0.8949877652431544,
+        "n": 100
+      },
+      "v_T": {
+        "mean": 0.2691185740192511,
+        "sd": 0.020598331989630465,
+        "ci95_low": 0.2650813009492835,
+        "ci95_high": 0.2731558470892187,
+        "n": 100
+      },
+      "cumulative_u": {
+        "mean": 586.1700141862411,
+        "sd": 3.1192623700211564,
+        "ci95_low": 585.558638761717,
+        "ci95_high": 586.7813896107652,
+        "n": 100
+      },
+      "action_share": {
+        "H": 0.88163,
+        "L": 0.0,
+        "A": 0.11364,
+        "V": 0.00473
+      }
+    }
+  },
+  "validation_unit_tests": {
+    "test_1_sigmoid_in_unit_interval": "pass",
+    "test_2_h_in_unit_interval": "pass",
+    "test_3_d_in_unit_interval": "pass",
+    "test_4_qualities_in_unit_interval": "pass",
+    "test_5_state_transitions_in_unit_interval": "pass",
+    "test_6_h_increases_with_c": "pass",
+    "test_7_h_decreases_with_z": "pass",
+    "test_8_d_increases_with_v": "pass",
+    "test_9_d_increases_with_phi": "pass",
+    "test_10_d_decreases_with_z": "pass",
+    "test_11_q_v_increases_with_v_when_ai_can_be_wrong": "pass",
+    "test_12_q_v_increases_with_phi_when_ai_can_be_wrong": "pass",
+    "test_13_q_l_equals_l": "pass",
+    "test_14_q_a_is_convex_combination": "pass",
+    "test_15_attractor_convergence": "pass",
+    "test_17_reproducibility": "pass",
+    "test_limit_l_equals_one_q_v_is_one": "pass",
+    "test_limit_l_equals_zero_q_v_equals_d_h": "pass",
+    "test_limit_phi_equals_zero_q_v_equals_l": "pass",
+    "test_low_v_little_correction_benefit": "pass",
+    "test_attractor_formulas": "pass",
+    "test_16_zero_rho_myopic_dynamic_agreement": {
+      "agreement_rate": 1.0,
+      "n_steps": 160,
+      "horizon": 40,
+      "n_runs": 4
+    }
+  },
+  "dynamic_unused_workflows": [
+    "L"
+  ],
+  "csv": "M2/outputs/m2_runs.csv",
+  "figures": [
+    "M2/figures/m2_c_trajectory.png",
+    "M2/figures/m2_v_trajectory.png",
+    "M2/figures/m2_dynamic_action_share.png",
+    "M2/figures/m2_policy_map.png"
+  ],
+  "n_seeds": 100
+}

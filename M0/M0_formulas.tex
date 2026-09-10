@@ -1,0 +1,70 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs}
+
+\title{M0 formulas}
+\author{Negin}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent
+M0 is the original HCOMP model: one competence state and three actions
+\(a_t\in\{H,L,A\}\).
+
+\section*{State and action}
+\[
+c_t\in[0,1],\qquad z_t\in[0,1],\qquad a_t\in\{H,L,A\}.
+\]
+
+\section*{Current-task quality}
+\[
+\sigma(x)=\frac{1}{1+e^{-x}}
+\]
+\begin{align}
+p_H(c_t,z_t)
+&=\sigma(\alpha_0+\alpha_c c_t-\alpha_z z_t),\\
+p_L(z_t)
+&=\sigma(\beta_0-\beta_z z_t),\\
+p_A(c_t,z_t)
+&=p_L(z_t)+\bigl[1-p_L(z_t)\bigr]c_t\,p_H(c_t,z_t).
+\end{align}
+
+\section*{Payoff}
+\[
+u(a_t,c_t,z_t)=p_{a_t}(c_t,z_t)-\kappa_{a_t}.
+\]
+
+\section*{Competence transition}
+\[
+c_{t+1}
+=\Pi_{[0,1]}\bigl[c_t+\rho_{a_t}(m_{a_t}-c_t)\bigr].
+\]
+Reference attractors: \(m_H=1\), \(m_A=0.45\), \(m_L=0\).
+Reference rate: \(\rho_a=\rho=0.024\) for all \(a\).
+
+\section*{Inherited technical values}
+\[
+\alpha_0=-0.5,\;
+\alpha_c=3.9,\;
+\alpha_z=2.0,\;
+\beta_0=1.05,\;
+\beta_z=1.2,
+\]
+\[
+\kappa_H=0.26,\;
+\kappa_A=0.055,\;
+\kappa_L=0.02,\;
+c_0=0.35.
+\]
+
+\section*{Policies}
+\begin{itemize}
+  \item Fixed: \(a_t=H\), \(a_t=L\), or \(a_t=A\) for all \(t\).
+  \item Myopic: \(a_t=\arg\max_a u(a,c_t,z_t)\).
+  \item Dynamic: finite-horizon DP,
+  \(a_t=\arg\max_a\bigl\{u(a,c_t,z_t)+\gamma V_{t+1}(c_{t+1})\bigr\}\).
+\end{itemize}
+
+\end{document}

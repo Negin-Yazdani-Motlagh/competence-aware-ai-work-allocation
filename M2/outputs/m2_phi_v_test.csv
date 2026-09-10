@@ -1,0 +1,13 @@
+policy,phi,share_V,n_V,n
+Dynamic,zero,0.0036,360,100000
+Dynamic,low,0.00375,375,100000
+Dynamic,half,0.00447,447,100000
+Dynamic,high,0.00607,607,100000
+Dynamic,one,0.00678,678,100000
+Dynamic,baseline,0.00473,473,100000
+Myopic,zero,0.0,0,100000
+Myopic,low,0.0,0,100000
+Myopic,half,0.02197,2197,100000
+Myopic,high,0.51017,51017,100000
+Myopic,one,0.62922,62922,100000
+Myopic,baseline,0.07404,7404,100000

@@ -1,0 +1,165 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array}
+
+\title{M0: implemented model}
+\author{Negin}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent
+This is the M0 model that was run: the original HCOMP specification
+with one competence state and three actions.
+
+\section{State, task, and action}
+\[
+c_t\in[0,1],\qquad
+z_t\sim\mathrm{Unif}[0,1],\qquad
+a_t\in\{H,L,A\}.
+\]
+Initial competence: \(c_1=c_0=0.35\).
+Horizon: \(T=400\).
+Number of runs: \(N=20\), master seed \(42\).
+
+\section{Current-task quality}
+\[
+\sigma(x)=\frac{1}{1+e^{-x}}.
+\]
+\begin{align}
+p_H(c_t,z_t)
+&=\sigma(\alpha_0+\alpha_c c_t-\alpha_z z_t),
+\label{eq:pH}\\
+p_L(z_t)
+&=\sigma(\beta_0-\beta_z z_t),
+\label{eq:pL}\\
+p_A(c_t,z_t)
+&=p_L(z_t)+\bigl[1-p_L(z_t)\bigr]c_t\,p_H(c_t,z_t).
+\label{eq:pA}
+\end{align}
+Quality used in the run:
+\[
+p(a_t,c_t,z_t)
+=
+\begin{cases}
+p_H(c_t,z_t) & a_t=H,\\
+p_L(z_t) & a_t=L,\\
+p_A(c_t,z_t) & a_t=A.
+\end{cases}
+\]
+
+\section{Payoff}
+\[
+u(a_t,c_t,z_t)=p(a_t,c_t,z_t)-\kappa_{a_t}.
+\label{eq:u}
+\]
+
+\section{Competence transition}
+\[
+c_{t+1}
+=\Pi_{[0,1]}\bigl[c_t+\rho(m_{a_t}-c_t)\bigr],
+\label{eq:trans}
+\]
+where \(\Pi_{[0,1]}\) clips to \([0,1]\) and \(\rho_a=\rho\) for all actions.
+
+\section{Parameters used in the run}
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Object & Value \\
+\midrule
+\(\alpha_0,\alpha_c,\alpha_z\) & \(-0.5,\; 3.9,\; 2.0\) \\
+\(\beta_0,\beta_z\) & \(1.05,\; 1.2\) \\
+\(m_H,m_A,m_L\) & \(1.00,\; 0.45,\; 0.00\) \\
+\(\rho\) & \(0.024\) \\
+\(\kappa_H,\kappa_A,\kappa_L\) & \(0.26,\; 0.055,\; 0.02\) \\
+\(\gamma\) & \(1\) \\
+terminal bequest & \(B=20\), so \(V_{T+1}(c)=Bc\) \\
+DP grids & \(c\in\{0,0.02,\ldots,1\}\) (51 points), \(z\in\{0,\ldots,1\}\) (25 points) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Policies}
+\paragraph{H-only.} \(a_t=H\) for all \(t\).
+\paragraph{L-only.} \(a_t=L\) for all \(t\).
+\paragraph{A-only.} \(a_t=A\) for all \(t\).
+\paragraph{Myopic.}
+\[
+a_t=\arg\max_{a\in\{H,L,A\}} u(a,c_t,z_t).
+\]
+\paragraph{Dynamic.}
+Finite-horizon backward induction. Let \(z\) be discretized on the \(z\)-grid.
+\[
+V_{T+1}(c)=Bc,
+\]
+\[
+V_t(c)
+=
+\mathbb{E}_z
+\left[
+\max_{a\in\{H,L,A\}}
+\bigl\{
+u(a,c,z)+\gamma V_{t+1}(c'(a,c))
+\bigr\}
+\right],
+\]
+\[
+c'(a,c)=\Pi_{[0,1]}\bigl[c+\rho(m_a-c)\bigr].
+\]
+The implemented policy is
+\[
+a_t
+=
+\arg\max_{a\in\{H,L,A\}}
+\bigl\{
+u(a,c_t,z_t)+\gamma V_{t+1}(c'(a,c_t))
+\bigr\},
+\]
+with \(V_{t+1}\) interpolated on the \(c\)-grid.
+
+\section{Period-\(t\) update}
+Given \((c_t,z_t)\) and a policy,
+\begin{enumerate}
+  \item choose \(a_t\);
+  \item record \(p_t=p(a_t,c_t,z_t)\) and \(u_t=u(a_t,c_t,z_t)\);
+  \item set \(c_{t+1}\) by~\eqref{eq:trans}.
+\end{enumerate}
+Reported cumulative utility on a run is \(\sum_{t=1}^{T}u_t\).
+
+\section{Formula check at \(c_0=0.35\), \(z=0.5\)}
+\begin{center}
+\begin{tabular}{@{}lc@{}}
+\toprule
+Quantity & Value \\
+\midrule
+\(p_H\) & \(0.4663\) \\
+\(p_L\) & \(0.6106\) \\
+\(p_A\) & \(0.6742\) \\
+\(u_H\) & \(0.2063\) \\
+\(u_L\) & \(0.5906\) \\
+\(u_A\) & \(0.6192\) \\
+\(c_1\mid H\) & \(0.3656\) \\
+\(c_1\mid L\) & \(0.3416\) \\
+\(c_1\mid A\) & \(0.3524\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Run summary (\(T=400\), \(N=20\))}
+\begin{center}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Policy & Mean final \(c\) & Mean \(\sum u_t\) & Mean final \(p\) \\
+\midrule
+H-only & \(1.000\) & \(245.08\) & \(0.910\) \\
+L-only & \(0.000\) & \(235.36\) & \(0.616\) \\
+A-only & \(0.450\) & \(257.40\) & \(0.709\) \\
+Myopic & \(0.450\) & \(257.40\) & \(0.709\) \\
+Dynamic & \(0.861\) & \(252.96\) & \(0.874\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{document}

@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.mplconfig/
+outputs/*_runs.csv
+.DS_Store
